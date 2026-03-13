@@ -43,8 +43,20 @@
   .topbar{display:flex;align-items:center;gap:18px;margin-bottom:1.5rem;padding-bottom:1.25rem;border-bottom:0.5px solid var(--warm-100)}
   .logo{width:100px;height:auto;flex-shrink:0}
   .logo img{width:100%;height:auto;object-fit:contain;display:block}
-  .top-info h1{font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--ink);letter-spacing:-.2px}
+  .top-info h1{font-family:var(--font-body);font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.2px}
   .top-info p{font-size:12px;color:var(--ink-50);margin-top:2px;letter-spacing:.02em}
+  .topbar-spacer{flex:1}
+  .it-help{position:relative}
+  .it-help-btn{padding:6px 12px;border:0.5px solid var(--warm-100);border-radius:var(--radius-sm);font-size:11px;font-weight:500;cursor:pointer;background:var(--white);color:var(--ink-50);transition:all .15s;font-family:var(--font-body);letter-spacing:.02em;white-space:nowrap}
+  .it-help-btn:hover{border-color:var(--warm-300);color:var(--ink)}
+  .it-help-drop{display:none;position:absolute;right:0;top:calc(100% + 6px);background:var(--white);border:0.5px solid var(--warm-100);border-radius:var(--radius);padding:14px 16px;min-width:240px;box-shadow:0 4px 16px rgba(0,0,0,.08);z-index:100}
+  .it-help-drop.open{display:block}
+  .it-help-drop .help-title{font-size:11px;font-weight:600;color:var(--warm-400);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+  .it-help-drop .help-row{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:0.5px solid var(--warm-100);font-size:13px}
+  .it-help-drop .help-row:last-child{border-bottom:none}
+  .it-help-drop .help-row a{color:var(--olive);text-decoration:none;font-weight:500}
+  .it-help-drop .help-row a:hover{text-decoration:underline}
+  .it-help-drop .help-label{font-size:11px;color:var(--ink-30);min-width:60px}
 
   /* FORM TYPE SELECTOR */
   .form-selector{display:flex;gap:8px;margin-bottom:1.5rem}
@@ -193,7 +205,7 @@
   .btn-green:hover{background:var(--olive-light)}
 
   /* NAV FOOTER */
-  .nav-footer{display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem;padding-top:1rem;border-top:0.5px solid var(--warm-100)}
+  .nav-footer{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:1.25rem;padding-top:1rem;border-top:0.5px solid var(--warm-100)}
   .nav-footer .btn{min-width:100px}
   .nav-footer .btn-next{background:var(--olive);color:var(--cream);border-color:var(--olive)}
   .nav-footer .btn-next:hover{background:var(--olive-light)}
@@ -212,7 +224,8 @@
   .print-doc .doc-logo img{width:100%;height:100%;object-fit:contain}
   .print-doc .doc-title{font-family:var(--font-display);font-size:18pt;font-weight:400;color:var(--ink);letter-spacing:-.3px}
   .print-doc .doc-subtitle{font-size:9pt;color:var(--ink-50);margin-top:2px}
-  .print-doc h2{font-size:10pt;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px;padding:4px 8px;background:#f3f1ed;border-left:3px solid var(--olive);color:var(--olive)}
+  .print-doc h2{font-size:10pt;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 8px;padding:6px 10px;background:var(--ink);color:var(--white);text-align:center;border:none;border-radius:0}
+  .print-doc h2.eval-section{background:#f3f1ed;color:var(--olive);text-align:left;border-left:3px solid var(--olive);padding:4px 8px}
   .print-doc .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;margin-bottom:14px}
   .print-doc .info-row{display:flex;gap:6px;padding:4px 0;border-bottom:0.5px solid var(--warm-100);font-size:10.5pt}
   .print-doc .info-label{font-weight:600;min-width:120px;flex-shrink:0;color:var(--ink)}
@@ -224,7 +237,9 @@
   .print-doc .doc-field-label{font-weight:600;font-size:10pt;margin-bottom:4px;color:var(--ink)}
   .print-doc .doc-field-value{padding:6px 0;min-height:24px;border-bottom:0.5px solid var(--warm-100);white-space:pre-wrap;color:var(--ink-50)}
   .print-doc .doc-field-box{border:1px solid var(--warm-100);border-radius:4px;padding:8px 10px;min-height:60px;white-space:pre-wrap;background:var(--cream);color:var(--ink)}
-  .print-doc .sig-section{margin-top:30px;page-break-inside:avoid}
+  .print-doc .page-break{page-break-before:always;margin-top:0}
+  .print-doc .section-block{page-break-inside:avoid}
+  .print-doc .sig-section{margin-top:30px;page-break-inside:avoid;page-break-before:auto}
   .print-doc .sig-disclaimer{font-size:9pt;color:var(--ink-50);margin-bottom:16px;line-height:1.5}
   .print-doc .sig-grid{display:grid;grid-template-columns:1fr auto;gap:8px;margin-bottom:18px}
   .print-doc .sig-line{border-bottom:1px solid var(--ink);padding-bottom:4px;min-width:280px;font-size:10.5pt;min-height:20px}
@@ -232,7 +247,7 @@
   .print-doc .sig-line-label,.print-doc .sig-date-label{font-size:8pt;color:var(--ink-30);margin-top:2px}
 
   .print-toolbar{position:sticky;top:0;background:var(--olive);color:var(--cream);padding:10px 20px;display:flex;align-items:center;gap:12px;z-index:10}
-  .print-toolbar .btn{color:var(--cream);border-color:var(--warm-400)}
+  .print-toolbar .btn{color:var(--white);border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.1)}
   .print-toolbar .btn:hover{background:var(--olive-light)}
   .print-toolbar .btn-go{background:var(--gold);border-color:var(--gold);color:var(--white)}
   .print-toolbar .btn-go:hover{background:var(--gold-light)}
@@ -240,12 +255,104 @@
   .print-doc[contenteditable=true]{outline:none}
   .print-doc[contenteditable=true] .doc-field-box:hover,.print-doc[contenteditable=true] .doc-field-value:hover,.print-doc[contenteditable=true] td:hover{background:#faf8f3;outline:1px dashed var(--warm-200);outline-offset:2px;cursor:text}
 
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:640px){
+    body{padding:1rem .75rem}
+    .shell{max-width:100%}
+
+    /* Header */
+    .topbar{gap:12px;flex-wrap:wrap}
+    .logo{width:70px}
+    .top-info h1{font-size:18px}
+    .top-info p{font-size:11px}
+    .topbar-spacer{display:none}
+    .it-help{position:static;margin-left:auto}
+    .it-help-drop{right:auto;left:0;min-width:calc(100vw - 2rem)}
+
+    /* Form selector */
+    .form-selector{flex-direction:column;gap:6px}
+    .form-btn{padding:12px 8px;font-size:13px}
+
+    /* Tabs */
+    .tab-bar{gap:1px;padding:2px}
+    .tab{padding:8px 2px;font-size:10px;letter-spacing:0}
+
+    /* Cards */
+    .card{padding:.9rem 1rem}
+
+    /* Fields */
+    .field-grid{grid-template-columns:1fr;gap:8px}
+    input[type=text],input[type=date],input[type=number],select,textarea{font-size:16px;padding:10px 12px}
+
+    /* Metrics */
+    .metric-row.cols-4{grid-template-columns:repeat(2,1fr)}
+    .metric-row.cols-3{grid-template-columns:repeat(3,1fr)}
+    .metric-value{font-size:22px}
+
+    /* Rating table */
+    .rating-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .rating-table thead,.rating-table tbody,.rating-table tr{display:table;width:100%;table-layout:fixed}
+    .rating-table th:first-child,.rating-table td:first-child{width:30%}
+    .rbtn{width:28px;height:28px;font-size:14px}
+    .rating-word{display:none}
+
+    /* Occurrence table */
+    .occ-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .occ-table thead,.occ-table tbody,.occ-table tr{display:table;width:100%;table-layout:auto}
+    .occ-table td input,.occ-table td select{font-size:14px;padding:8px}
+
+    /* Level bar */
+    .level-bar{flex-wrap:wrap}
+    .level-btn{flex:1 1 calc(50% - 4px);min-width:calc(50% - 4px);padding:10px 6px;font-size:12px}
+
+    /* Calibration */
+    .guide-row{grid-template-columns:80px 1fr;gap:8px;padding:8px 0}
+    .guide-badge{font-size:10px;padding:3px 8px}
+    .guide-text{font-size:12px}
+    .dist-row-label{width:55px;font-size:10px}
+
+    /* Signature row */
+    .sig-row{grid-template-columns:1fr;gap:12px}
+
+    /* Nav footer */
+    .nav-footer{flex-wrap:wrap;gap:6px}
+    .nav-footer .btn{font-size:12px;padding:8px 12px;min-width:auto}
+    .nav-spacer{flex-basis:100%;height:0}
+    .nav-footer .btn-print,.nav-footer .btn-print-go{flex:1}
+    .nav-footer .btn-next{flex:1}
+
+    /* Prior CA grids */
+    .prior-ca div[style*="grid-template-columns"]{display:flex!important;flex-wrap:wrap;gap:8px!important}
+    .prior-ca .field-group{flex:1 1 calc(50% - 4px);min-width:120px}
+
+    /* Print overlay */
+    .print-toolbar{flex-wrap:wrap;padding:8px 12px;gap:8px}
+    .print-toolbar span{font-size:11px;flex-basis:100%}
+    .print-doc{padding:.5rem .75rem;font-size:10pt}
+    .print-doc .doc-title{font-size:14pt}
+    .print-doc .info-grid{grid-template-columns:1fr}
+    .print-doc .sig-grid{grid-template-columns:1fr}
+  }
+
+  @media(max-width:380px){
+    .tab{font-size:9px;padding:7px 1px}
+    .metric-row.cols-4{grid-template-columns:1fr 1fr}
+    .metric-row.cols-3{grid-template-columns:1fr}
+    .form-btn{font-size:12px;padding:10px 6px}
+    .top-info h1{font-size:16px}
+  }
+
   @media print{
     body{background:#fff;padding:0}
     .shell,.topbar,.form-selector,.tab-bar,.nav-footer{display:none!important}
     .print-overlay{position:static!important;display:block!important}
     .print-toolbar{display:none!important}
     .print-doc{padding:.5in .75in;max-width:100%}
+    .print-doc h2{-webkit-print-color-adjust:exact;print-color-adjust:exact;color-adjust:exact}
+    .print-doc table.doc-table th{-webkit-print-color-adjust:exact;print-color-adjust:exact;color-adjust:exact}
+    .print-doc .section-block{page-break-inside:avoid}
+    .print-doc .sig-section{page-break-inside:avoid}
+    @page{margin:.5in .75in;@bottom-center{content:"Page " counter(page) " of " counter(pages);font-size:8pt;color:#999}}
   }
 </style>
 </head>
@@ -257,8 +364,17 @@
 <div class="topbar">
   <div class="logo"><img src="https://www.rowecasaorganics.com/cdn/shop/files/Checkout_Logo.png" alt="Rowe Casa Organics"/></div>
   <div class="top-info">
-    <h1 id="app-title">HR Toolkit</h1>
+    <h1 id="app-title">RCO HR Docs</h1>
     <p id="today-date"></p>
+  </div>
+  <div class="topbar-spacer"></div>
+  <div class="it-help">
+    <button class="it-help-btn" onclick="toggleITHelp()">IT Help</button>
+    <div class="it-help-drop" id="it-help-drop">
+      <div class="help-title">IT Support</div>
+      <div class="help-row"><span class="help-label">Email</span><a href="mailto:itsupport@rowecasaorganics.com">itsupport@rowecasaorganics.com</a></div>
+      <div class="help-row"><span class="help-label">Emergency</span><a href="tel:4698931998">469-893-1998</a></div>
+    </div>
   </div>
 </div>
 
@@ -565,8 +681,7 @@ function switchForm(form,btn){
   btn.classList.add('active');
   document.querySelectorAll('.form-section').forEach(s=>s.classList.remove('active'));
   document.getElementById('form-'+form).classList.add('active');
-  const titles={eval:'Employee Evaluation',ca:'Corrective Action',att:'Attendance CA'};
-  document.getElementById('app-title').textContent=titles[form];
+  document.getElementById('app-title').textContent='RCO HR Docs';
   updateNav();
 }
 
@@ -738,6 +853,14 @@ function syncAll(){
 function setDot(id,state){const d=document.getElementById(id);if(d) d.className='tab-dot'+(state?' '+state:'');}
 function gv(id){const el=document.getElementById(id);return el?el.value.trim():'';}
 function toggleEl(id){const el=document.getElementById(id);el.style.display=el.style.display==='block'?'none':'block';}
+function toggleITHelp(){
+  const drop=document.getElementById('it-help-drop');
+  drop.classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  const help=document.querySelector('.it-help');
+  if(help&&!help.contains(e.target)) document.getElementById('it-help-drop').classList.remove('open');
+});
 function toggleCollapse(bodyId,header){
   const body=document.getElementById(bodyId);
   const arrow=header.querySelector('.collapse-arrow');
@@ -753,58 +876,73 @@ function generatePrint(){
 
   if(currentForm==='eval'){
     html=`<div class="doc-header"><div class="doc-logo"><img src="https://www.rowecasaorganics.com/cdn/shop/files/Checkout_Logo.png" alt="Rowe Casa Organics"/></div><div><div class="doc-title">Employee Evaluation Form</div><div class="doc-subtitle">Rowe Casa Organics &mdash; ${today}</div></div></div>`;
-    html+=`<h2>Employee Information</h2><div class="info-grid">
+    html+=`<div class="section-block"><h2 class="eval-section">Employee Information</h2><div class="info-grid">
       <div class="info-row"><span class="info-label">Employee Name:</span><span class="info-val">${gv('e-name')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Evaluation Date:</span><span class="info-val">${gv('e-date')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Job Title:</span><span class="info-val">${gv('e-title')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Department:</span><span class="info-val">${gv('e-dept')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Manager:</span><span class="info-val">${gv('e-mgr')||'_____________'}</span></div>
-      <div class="info-row"><span class="info-label">Hourly Rate:</span><span class="info-val">${gv('e-rate')||'_____________'}</span></div></div>`;
-    html+=`<h2>Performance Ratings</h2><table class="doc-table"><thead><tr><th>Criteria</th><th>Not Met</th><th>Met</th><th>Exceeded</th><th>N/A</th></tr></thead><tbody>`;
+      <div class="info-row"><span class="info-label">Hourly Rate:</span><span class="info-val">${gv('e-rate')||'_____________'}</span></div></div></div>`;
+    html+=`<h2 class="eval-section">Performance Ratings</h2><table class="doc-table"><thead><tr><th>Criteria</th><th>Not Met</th><th>Met</th><th>Exceeded</th><th>N/A</th></tr></thead><tbody>`;
     criteria.forEach((c,i)=>{const r=evalRatings[c];const last=i===criteria.length-1;
       html+=`<tr${last?' style="font-weight:600"':''}><td>${last?'Overall Work Performance':c}</td><td style="text-align:center">${r===1?'&#10005;':'&#9744;'}</td><td style="text-align:center">${r===2?'&#10003;':'&#9744;'}</td><td style="text-align:center">${r===3?'&#9733;':'&#9744;'}</td><td style="text-align:center">${r===0?'&#10003;':'&#9744;'}</td></tr>`;
     });
     html+=`</tbody></table>`;
-    html+=`<h2>Narrative</h2>`;
-    html+=`<div class="doc-field"><div class="doc-field-label">Strengths:</div><div class="doc-field-box">${gv('e-strengths')||' '}</div></div>`;
-    html+=`<div class="doc-field"><div class="doc-field-label">Areas of Improvement:</div><div class="doc-field-box">${gv('e-improve')||' '}</div></div>`;
-    html+=`<div class="doc-field"><div class="doc-field-label">Any Corrective Action in the Last 12 Months?</div><div class="doc-field-value">${evalCA===true?'Yes — '+(gv('e-ca-text')||'See notes'):evalCA===false?'No':'_____________'}</div></div>`;
-    html+=`<div class="doc-field"><div class="doc-field-label">Employee Comments:</div><div class="doc-field-box">${gv('e-comments')||' '}</div></div>`;
+    // Score summary metrics
+    const pVals=Object.entries(evalRatings).filter(([,v])=>v>0);
+    const pExc=Object.values(evalRatings).filter(v=>v===3).length;
+    const pMet=Object.values(evalRatings).filter(v=>v===2).length;
+    const pNm=Object.values(evalRatings).filter(v=>v===1).length;
+    const pAvg=pVals.length?(pVals.reduce((s,[,v])=>s+v,0)/pVals.length).toFixed(1):'—';
+    const scoreColor=parseFloat(pAvg)>=2.5?'var(--green)':parseFloat(pAvg)>=1.5?'var(--gold)':'var(--red)';
+    html+=`<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0 8px">
+      <div style="border:1px solid #e8e4df;border-radius:6px;padding:10px;text-align:center"><div style="font-size:8pt;font-weight:600;color:#5c5041;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px">Score</div><div style="font-family:var(--font-display);font-size:20pt;color:${scoreColor}">${pAvg}</div></div>
+      <div style="border:1px solid #e8e4df;border-radius:6px;padding:10px;text-align:center"><div style="font-size:8pt;font-weight:600;color:#5c5041;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px">Exceeded</div><div style="font-family:var(--font-display);font-size:20pt;color:var(--green)">${pExc}</div></div>
+      <div style="border:1px solid #e8e4df;border-radius:6px;padding:10px;text-align:center"><div style="font-size:8pt;font-weight:600;color:#5c5041;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px">Met</div><div style="font-family:var(--font-display);font-size:20pt;color:var(--ink)">${pMet}</div></div>
+      <div style="border:1px solid #e8e4df;border-radius:6px;padding:10px;text-align:center"><div style="font-size:8pt;font-weight:600;color:#5c5041;text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px">Not Met</div><div style="font-family:var(--font-display);font-size:20pt;color:var(--red)">${pNm}</div></div>
+    </div>`;
+    html+=`<h2 class="eval-section">Narrative</h2>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Strengths:</div><div class="doc-field-box">${gv('e-strengths')||' '}</div></div>`;
+    html+=`<div class="doc-field"><div class="doc-field-label">Areas of Improvement:</div><div class="doc-field-box">${gv('e-improve')||' '}</div></div></div>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Any Corrective Action in the Last 12 Months?</div><div class="doc-field-value">${evalCA===true?'Yes — '+(gv('e-ca-text')||'See notes'):evalCA===false?'No':'_____________'}</div></div>`;
+    html+=`<div class="doc-field"><div class="doc-field-label">Employee Comments:</div><div class="doc-field-box">${gv('e-comments')||' '}</div></div></div>`;
     html+=`<div class="doc-field"><div class="doc-field-label">Re-Evaluation Date:</div><div class="doc-field-value">${gv('e-reeval')||'N/A'}</div></div>`;
     html+=printSigs(['Employee','Supervisor','Director']);
 
   } else if(currentForm==='ca'){
     const labels={verbal:'Verbal Warning',written:'Written Warning',final:'Final Warning',termination:'Termination'};
     html=`<div class="doc-header"><div class="doc-logo"><img src="https://www.rowecasaorganics.com/cdn/shop/files/Checkout_Logo.png" alt="Rowe Casa Organics"/></div><div><div class="doc-title">Employee Corrective Action Form</div><div class="doc-subtitle">Rowe Casa Organics &mdash; ${today}</div></div></div>`;
-    html+=`<h2>Employee Information</h2><div class="info-grid">
+    html+=`<div class="section-block"><h2>Employee Information</h2><div class="info-grid">
       <div class="info-row"><span class="info-label">Employee Name:</span><span class="info-val">${gv('c-name')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Date:</span><span class="info-val">${gv('c-date')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Employee #:</span><span class="info-val">${gv('c-num')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Job Title:</span><span class="info-val">${gv('c-title')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Supervisor:</span><span class="info-val">${gv('c-sup')||'_____________'}</span></div>
-      <div class="info-row"><span class="info-label">Department:</span><span class="info-val">${gv('c-dept')||'_____________'}</span></div></div>`;
-    html+=`<h2>Corrective Action Required</h2><div class="info-grid"><div class="info-row"><span class="info-label">Type:</span><span class="info-val">${gv('c-type')||'_____________'}</span></div><div class="info-row"><span class="info-label">Level:</span><span class="info-val">${caLevel?labels[caLevel]:'_____________'}</span></div></div>`;
+      <div class="info-row"><span class="info-label">Department:</span><span class="info-val">${gv('c-dept')||'_____________'}</span></div></div></div>`;
+    html+=`<div class="section-block"><h2>Corrective Action Required</h2><div class="info-grid"><div class="info-row"><span class="info-label">Type:</span><span class="info-val">${gv('c-type')||'_____________'}</span></div><div class="info-row"><span class="info-label">Level:</span><span class="info-val">${caLevel?labels[caLevel]:'_____________'}</span></div></div>`;
     if(caPriors.length){html+=`<div class="doc-field"><div class="doc-field-label">Prior Corrective Action(s):</div>`;caPriors.forEach(p=>{html+=`<div class="doc-field-value">${p.level||'—'} &mdash; Effective: ${p.date||'—'}</div>`;});html+=`</div>`;}
+    html+=`</div>`;
     html+=`<h2>Details</h2>`;
-    html+=`<div class="doc-field"><div class="doc-field-label">Description of Incident(s) or Behavior(s):</div><div class="doc-field-box">${gv('c-desc')||' '}</div></div>`;
-    html+=`<div class="doc-field"><div class="doc-field-label">Policy Violation:</div><div class="doc-field-box">${gv('c-policy')||' '}</div></div>`;
-    html+=`<div class="doc-field"><div class="doc-field-label">Plan for Improvement:</div><div class="doc-field-box">${gv('c-plan')||' '}</div></div>`;
-    html+=`<div class="doc-field"><div class="doc-field-label">Consequences:</div><div class="doc-field-box">${gv('c-con')||' '}</div></div>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Description of Incident(s) or Behavior(s):</div><div class="doc-field-box">${gv('c-desc')||' '}</div></div></div>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Policy Violation:</div><div class="doc-field-box">${gv('c-policy')||' '}</div></div></div>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Plan for Improvement:</div><div class="doc-field-box">${gv('c-plan')||' '}</div></div></div>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Consequences:</div><div class="doc-field-box">${gv('c-con')||' '}</div></div></div>`;
     html+=`<div class="doc-field"><div class="doc-field-label">Re-Evaluation Meeting Date:</div><div class="doc-field-value">${gv('c-reeval')||'_____________'}</div></div>`;
     html+=printSigs(['Witness or HR','Supervisor or Director','Employee']);
 
   } else {
     const labels={verbal:'Verbal Warning',written:'Written Warning',final:'Final Warning',termination:'Termination'};
     html=`<div class="doc-header"><div class="doc-logo"><img src="https://www.rowecasaorganics.com/cdn/shop/files/Checkout_Logo.png" alt="Rowe Casa Organics"/></div><div><div class="doc-title">Attendance Corrective Action</div><div class="doc-subtitle">Rowe Casa Organics &mdash; ${today}</div></div></div>`;
-    html+=`<h2>Employee Information</h2><div class="info-grid">
+    html+=`<div class="section-block"><h2>Employee Information</h2><div class="info-grid">
       <div class="info-row"><span class="info-label">Employee Name:</span><span class="info-val">${gv('a-name')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Date:</span><span class="info-val">${gv('a-date')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Employee #:</span><span class="info-val">${gv('a-num')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Job Title:</span><span class="info-val">${gv('a-title')||'_____________'}</span></div>
       <div class="info-row"><span class="info-label">Supervisor:</span><span class="info-val">${gv('a-sup')||'_____________'}</span></div>
-      <div class="info-row"><span class="info-label">Department:</span><span class="info-val">${gv('a-dept')||'_____________'}</span></div></div>`;
-    html+=`<h2>Corrective Action Required</h2><div class="info-grid"><div class="info-row"><span class="info-label">Type:</span><span class="info-val">Attendance</span></div><div class="info-row"><span class="info-label">Level:</span><span class="info-val">${attLevel?labels[attLevel]:'_____________'}</span></div></div>`;
+      <div class="info-row"><span class="info-label">Department:</span><span class="info-val">${gv('a-dept')||'_____________'}</span></div></div></div>`;
+    html+=`<div class="section-block"><h2>Corrective Action Required</h2><div class="info-grid"><div class="info-row"><span class="info-label">Type:</span><span class="info-val">Attendance</span></div><div class="info-row"><span class="info-label">Level:</span><span class="info-val">${attLevel?labels[attLevel]:'_____________'}</span></div></div>`;
     if(attPriors.length){html+=`<div class="doc-field"><div class="doc-field-label">Prior Corrective Action(s):</div>`;attPriors.forEach(p=>{html+=`<div class="doc-field-value">${p.level||'—'} &mdash; Effective: ${p.date||'—'}</div>`;});html+=`</div>`;}
+    html+=`</div>`;
     if(occurrences.length){
       html+=`<h2>Attendance Occurrences</h2><table class="doc-table"><thead><tr><th>Type</th><th>Date</th><th>Points</th><th>Notes</th></tr></thead><tbody>`;
       occurrences.forEach(o=>{html+=`<tr><td>${o.type}</td><td>${o.date||'—'}</td><td>${o.points}</td><td>${o.notes||''}</td></tr>`;});
@@ -812,11 +950,11 @@ function generatePrint(){
     }
     html+=`<h2>Details</h2>`;
     const useDefPolicy=document.getElementById('use-def-policy').checked;
-    html+=`<div class="doc-field"><div class="doc-field-label">Policy Violation:</div><div class="doc-field-box">${useDefPolicy?'Unacceptable Reliability \u2014 Failure to report to work for scheduled shifts, accruing 3 or more unexcused absences in a 180-day period, arriving to work after scheduled start time, or requests to leave early.':gv('a-policy')||' '}</div></div>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Policy Violation:</div><div class="doc-field-box">${useDefPolicy?'Unacceptable Reliability \u2014 Failure to report to work for scheduled shifts, accruing 3 or more unexcused absences in a 180-day period, arriving to work after scheduled start time, or requests to leave early.':gv('a-policy')||' '}</div></div></div>`;
     const useDefPlan=document.getElementById('use-def-plan').checked;
-    html+=`<div class="doc-field"><div class="doc-field-label">Plan for Improvement:</div><div class="doc-field-box">${useDefPlan?'It is expected that you come to work on time and stay for the entire shift. You must follow the call-off procedure at least one hour before your scheduled shift if you are unable to report to work.':gv('a-plan')||' '}</div></div>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Plan for Improvement:</div><div class="doc-field-box">${useDefPlan?'It is expected that you come to work on time and stay for the entire shift. You must follow the call-off procedure at least one hour before your scheduled shift if you are unable to report to work.':gv('a-plan')||' '}</div></div></div>`;
     const useDefCon=document.getElementById('use-def-con').checked;
-    html+=`<div class="doc-field"><div class="doc-field-label">Consequences:</div><div class="doc-field-box">${useDefCon?'Failure to improve will result in further disciplinary action, up to and including termination of employment.':gv('a-con')||' '}</div></div>`;
+    html+=`<div class="section-block"><div class="doc-field"><div class="doc-field-label">Consequences:</div><div class="doc-field-box">${useDefCon?'Failure to improve will result in further disciplinary action, up to and including termination of employment.':gv('a-con')||' '}</div></div></div>`;
     html+=`<div class="doc-field"><div class="doc-field-label">Re-Evaluation Meeting Date:</div><div class="doc-field-value">${gv('a-reeval')||'_____________'}</div></div>`;
     html+=printSigs(['Witness or HR','Supervisor or Director','Employee']);
   }
@@ -826,9 +964,11 @@ function generatePrint(){
 }
 
 function printSigs(roles){
-  let h=`<div class="sig-section"><h2>Acknowledgment of Receipt</h2><div class="sig-disclaimer">By signing this form, you acknowledge receipt of this document and that its contents have been discussed with you. Your signature does not necessarily indicate agreement.</div>`;
+  let h=`<div class="sig-section"><h2${currentForm==='eval'?' class="eval-section"':''}>Acknowledgment of Receipt</h2><div class="sig-disclaimer">By signing this form, you acknowledge receipt of this document and that its contents have been discussed with you. Your signature does not necessarily indicate agreement.</div>`;
   roles.forEach(r=>{h+=`<div style="margin-bottom:18px"><div class="sig-grid"><div><div class="sig-line"></div><div class="sig-line-label">Signature of ${r}</div></div><div><div class="sig-date"></div><div class="sig-date-label">Date</div></div></div></div>`;});
-  return h+'</div>';
+  h+='</div>';
+  h+=`<div style="margin-top:30px;padding-top:10px;border-top:0.5px solid #ccc;text-align:center;font-size:8pt;color:#999">Rowe Casa Organics &mdash; Confidential HR Document</div>`;
+  return h;
 }
 function closePrint(){document.getElementById('print-overlay').classList.remove('show');document.getElementById('app-shell').style.display='';}
 function previewPDF(){generatePrint();document.getElementById('print-doc').setAttribute('contenteditable','true');}
